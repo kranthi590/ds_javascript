@@ -59,19 +59,14 @@ function quickSort(array) {
   if (array.length <= 1) {
     return array;
   }
-  let leftArray = [],
-    rightArray = [],
-    results = [];
-  const pivot = array.pop();
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] < pivot ) {
-      leftArray.push(array[i]);
-    } else {
-      rightArray.push(array[i]);
-    }
+  var pivot = array[0];
+  var left = [];
+  var right = [];
+  for (var i = 1; i < array.length; i++) {
+    array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
   }
-  return results.concat(quickSort(leftArray), pivot, quickSort(rightArray));
-}
+  return quickSort(left).concat(pivot, quickSort(right));
+};
 
 module.exports = {
   bubbleSort,
