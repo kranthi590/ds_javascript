@@ -1,7 +1,7 @@
 // --- Directions
 // Implement bubbleSort, selectionSort, and mergeSort
 
-function bubbleSort(array) {
+function bubbleSort(array) { // Bubble sort has a worst-case and average complexity of О(n2)
   for (var i = 0; i < array.length; i++) {
     for (var j = 0; j < (array.length - i - 1); j++) {
       if (array[j + 1] < array[j]) {
@@ -12,7 +12,7 @@ function bubbleSort(array) {
   return array;
 }
 
-function selectionSort(array) {
+function selectionSort(array) { // selectionSort sort has a worst-case and average complexity of О(n2)
   for (var i = 0; i < array.length; i++) {
     var minIndex = i;
     for (var j = i + 1; j < array.length; j++) {
@@ -27,7 +27,7 @@ function selectionSort(array) {
   return array;
 }
 
-function mergeSort(arr) {
+function mergeSort(arr) { //  Merge sort is O(nLogn)
   if (arr.length === 1) {
     return arr;
   }
@@ -55,7 +55,7 @@ function swap(array, index1, index2) {
   array[index2] = temp;
 }
 
-function quickSort(array) {
+function quickSort(array) { // quicksort shows that, on average, the algorithm takes O(n log n) 
   if (array.length <= 1) {
     return array;
   }
